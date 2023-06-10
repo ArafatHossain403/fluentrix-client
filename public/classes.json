@@ -1,0 +1,72 @@
+[
+    {
+      "name": "Spanish Language Course",
+      "instructor": "Maria Garcia",
+      "availableSeats": 20,
+      "price": 99.99,
+      "image": "https://www.fluentin3months.com/wp-content/uploads/2021/09/free-online-spanish-language-lessons.jpg"
+    },
+    {
+      "name": "French Language Course",
+      "instructor": "Jean-Pierre Dupont",
+      "availableSeats": 15,
+      "price": 109.99,
+      "image": "https://thumbs.dreamstime.com/b/blackboard-message-learn-french-some-text-70199835.jpg"
+    },
+    {
+      "name": "German Language Course",
+      "instructor": "Hans Müller",
+      "availableSeats": 18,
+      "price": 89.99,
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-b88768ccbb04a3b48ef17a4746ab38bc"
+    },
+    {
+      "name": "Chinese Language Course",
+      "instructor": "Li Wei",
+      "availableSeats": 25,
+      "price": 119.99,
+      "image": "https://blog.tutorabcchinese.com/hubfs/is_Chinese_the_hardest_language_to_learn.jpg"
+    },
+    {
+      "name": "Italian Language Course",
+      "instructor": "Giulia Rossi",
+      "availableSeats": 12,
+      "price": 94.99,
+      "image": "https://www.europassitalian.com/wp-content/uploads/2020/03/Kids-studying-Italian-1600x900.jpg"
+    },
+    {
+      "name": "Japanese Language Course",
+      "instructor": "Yuki Tanaka",
+      "availableSeats": 10,
+      "price": 129.99,
+      "image": "https://www.fluentin3months.com/wp-content/uploads/2021/09/japanese-words-1.jpg"
+    },
+    {
+      "name": "Russian Language Course",
+      "instructor": "Alexei Petrov",
+      "availableSeats": 16,
+      "price": 79.99,
+      "image": "https://www.fluentin3months.com/wp-content/uploads/2021/09/learn-russian-1.jpg"
+    },
+    {
+      "name": "Arabic Language Course",
+      "instructor": "Fatima Ahmed",
+      "availableSeats": 22,
+      "price": 139.99,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXD1jmsE-o_bsXwwkl9VDXkz9X-fBnPkxSw&usqp=CAU"
+    },
+    {
+      "name": "Portuguese Language Course",
+      "instructor": "Pedro Santos",
+      "availableSeats": 14,
+      "price": 104.99,
+      "image": "https://img.freepik.com/premium-vector/portuguese-language-learning-concept-language-school-portuguese-course-study-foreign-languages-with-native-speaker-idea-global-communication-flat-vector-illustration_277904-16284.jpg?w=740"
+    },
+    {
+      "name": "Korean Language Course",
+      "instructor": "Ji-hye Lee",
+      "availableSeats": 20,
+      "price": 114.99,
+      "image": "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2023/05/d263cd44-510c-4683-829f-f6b0f7205875-scaled.jpg"
+    }
+  ]
