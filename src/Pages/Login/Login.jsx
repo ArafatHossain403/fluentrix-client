@@ -3,9 +3,6 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import SocialLogin from '../Shared/SocialLogin';
-// import Swal from 'sweetalert2'
-// import SocialLogin from '../Shared/SocialLogin/SocialLogin';
-
 const Login = () => {
     
     const { signIn } = useContext(AuthContext);
@@ -26,15 +23,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                // Swal.fire({
-                //     title: 'User Login Successful.',
-                //     showClass: {
-                //         popup: 'animate__animated animate__fadeInDown'
-                //     },
-                //     hideClass: {
-                //         popup: 'animate__animated animate__fadeOutUp'
-                //     }
-                // });
+                
                 navigate(from, { replace: true });
             })
     }

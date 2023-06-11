@@ -1,22 +1,33 @@
 import { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
-
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
-  const handleToggle= (e)=>{
-    if(e.target.checked){
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+  const handleToggle = (e) => {
+    if (e.target.checked) {
       setTheme("dark");
-    }else{
+    } else {
       setTheme("light");
     }
   };
-  useEffect(()=> {
+  useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
-  },[theme]);
+  }, [theme]);
+
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const navOption = (
     <>
       <li className="text-xl">
@@ -29,9 +40,18 @@ const Navbar = () => {
       <li className="text-xl">
         <Link to="/classes">Classes</Link>
       </li>
-      <li className="text-xl">
-        <Link to="/login">Login</Link>
-      </li>
+      
+      {user ? (
+        <>
+          <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
+        </>
+      ) : (
+        <>
+          <li className="text-xl">
+            <Link to="/login">Login</Link>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -72,7 +92,7 @@ const Navbar = () => {
         <div className="navbar-end px-4">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
-            <input type="checkbox" onChange={handleToggle}/>
+            <input type="checkbox" onChange={handleToggle} />
 
             {/* sun icon */}
             <svg
