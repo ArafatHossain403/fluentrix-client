@@ -25,7 +25,7 @@ import PrivateRoute from "./PrivateRoute";
        },
        {
         path:'instructors',
-        element:<PrivateRoute><Instructors></Instructors></PrivateRoute>,
+        element:<Instructors></Instructors>,
        },
        {
         path:'login',

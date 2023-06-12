@@ -3,15 +3,28 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import SocialLogin from '../Shared/SocialLogin';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { app } from '../../firebase/firebase.config';
 const Login = () => {
     
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const auth =getAuth(app);
+    const provider =new GoogleAuthProvider();
 
     const from = location.state?.from?.pathname || "/";
 
-   
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+      };
 
     const handleLogin = event => {
         event.preventDefault();
@@ -63,7 +76,7 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='text-center font-bold'><small>Do not have an account? <Link className='text' to="/signup"> Signup</Link> </small></p>
-                       <SocialLogin></SocialLogin>
+                       <SocialLogin  onClick={handleGoogleSignIn}></SocialLogin>
                     </div>
                 </div>
             </div>
