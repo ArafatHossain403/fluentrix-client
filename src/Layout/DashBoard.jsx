@@ -38,11 +38,22 @@ const DashBoard = () => {
             </li>
             <li>
             <Link to="/dashboard/enrolledClasses"><SiGoogleclassroom></SiGoogleclassroom>Enrolled Class</Link>
+           
             </li>
-            <div className="divider"></div>
             <li>
             <Link to="/dashboard/paymentHistory"><MdPayment></MdPayment>Payment History</Link>
             </li>
+            <div className="divider"></div>
+            <li>
+            <Link to="/dashboard/paymentHistory"><MdPayment></MdPayment>Home</Link>
+            </li>
+            <li>
+            <Link to="/dashboard/paymentHistory"><MdPayment></MdPayment>Classes</Link>
+            </li>
+            <li>
+            <Link to="/dashboard/paymentHistory"><MdPayment></MdPayment>Instructors</Link>
+            </li>
+            
           </ul>
         </div>
       </div>

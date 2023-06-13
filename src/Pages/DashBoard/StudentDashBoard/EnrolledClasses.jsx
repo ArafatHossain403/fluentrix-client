@@ -5,7 +5,7 @@ const EnrolledClasses = () => {
     return (
         <div>
             <Helmet>
-                <title>fluentrix | Enrolled Classe</title>
+                <title>fluentrix | Enrolled Classes</title>
             </Helmet>
              <h2>Enrolled Classes</h2>
             
