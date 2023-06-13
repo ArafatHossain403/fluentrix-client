@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const PopularClassCard = ({ classes }) => {
   const { name, instructor, price, image, availableSeats, _id } = classes;
 
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleCoursesCart = (classes) => {
     console.log(classes);
@@ -24,14 +25,14 @@ const PopularClassCard = ({ classes }) => {
         .then(data => {
           if (data.insertedId) {
             Swal.fire({
-              title: { name },
+              
               text: "Course Added Successfully",
-              imageUrl: { image },
-              imageWidth: 400,
-              imageHeight: 200,
-              imageAlt: "Custom image",
+              
+        
+          
             });
-          } else {
+          } 
+          else {
             Swal.fire({
               title: "Login to Enroll the Course",
               icon: "warning",
@@ -41,7 +42,7 @@ const PopularClassCard = ({ classes }) => {
               confirmButtonText: "Login",
             }).then((result) => {
               if (result.isConfirmed) {
-                navigate('/login');
+                navigate('/login',{state:{from: location}});
               }
             });
           }
