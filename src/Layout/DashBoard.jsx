@@ -2,8 +2,8 @@ import { Link, Outlet } from "react-router-dom";
 import { SiGoogleclassroom } from "react-icons/si";
 import { GrCheckboxSelected } from "react-icons/gr";
 import { MdPayment } from "react-icons/md";
-import { FaHome } from "react-icons/fa";
-import { FaUsersBetweenLines } from "react-icons/fa";
+import { FaHome, FaUsers } from "react-icons/fa";
+
 
 const DashBoard = () => {
   const isAdmin = true;
@@ -47,7 +47,7 @@ const DashBoard = () => {
               </Link>
             </li> <li>
               <Link to="/dashboard/manageUsers">
-                <FaUsersBetweenLines></FaUsersBetweenLines> Manage Users
+               <FaUsers></FaUsers> Manage Users
               </Link>
             </li>
 
