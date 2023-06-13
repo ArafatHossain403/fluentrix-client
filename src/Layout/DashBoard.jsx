@@ -26,7 +26,9 @@ const DashBoard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+          <div><p className="font-bold text-3xl mb-6 text-center text-emerald-600">fluentrix</p></div>
             {/* Sidebar content here */}
             <li>
               <Link to="/"><FaHome></FaHome>Home</Link>
