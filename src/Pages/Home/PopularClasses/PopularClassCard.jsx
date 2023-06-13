@@ -74,7 +74,7 @@ const PopularClassCard = ({ classes }) => {
             onClick={() => handleCoursesCart(classes)}
             className="btn btn-warning"
           >
-            Enroll Now
+             Add to Cart
           </button>
         </div>
       </div>

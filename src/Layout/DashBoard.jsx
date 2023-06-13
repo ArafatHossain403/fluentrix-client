@@ -1,5 +1,8 @@
 
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { SiGoogleclassroom } from 'react-icons/si';
+import { GrCheckboxSelected } from 'react-icons/gr';
+import { MdPayment } from 'react-icons/md';
 
 const DashBoard = () => {
   return (
@@ -25,10 +28,14 @@ const DashBoard = () => {
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li>
-              <a>Sidebar Item 1</a>
+              <Link><GrCheckboxSelected></GrCheckboxSelected>Selected Class</Link>
             </li>
             <li>
-              <a>Sidebar Item 2</a>
+            <Link><SiGoogleclassroom></SiGoogleclassroom>Enrolled Class</Link>
+            </li>
+            <div className="divider"></div>
+            <li>
+            <Link><MdPayment></MdPayment>Payment History</Link>
             </li>
           </ul>
         </div>
