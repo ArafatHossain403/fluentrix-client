@@ -6,7 +6,9 @@ import Instructors from "../Pages/Instructors/Instructors";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import DashBoard from "../Layout/DashBoard";
-import StudentDashBoard from "../Pages/DashBoard/StudentDashBoard";
+import SelectedClasses from "../Pages/DashBoard/StudentDashBoard/SelectedClasses";
+import EnrolledClasses from "../Pages/DashBoard/StudentDashBoard/EnrolledClasses";
+import PaymentHistory from "../Pages/DashBoard/StudentDashBoard/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -40,8 +42,16 @@ export const router = createBrowserRouter([
     element: <DashBoard></DashBoard>,
     children: [
       {
-        path: "studentDashboard",
-        element: <StudentDashBoard></StudentDashBoard>,
+        path: "selectedClasses",
+        element: <SelectedClasses></SelectedClasses>,
+      },
+      {
+        path: "enrolledClasses",
+        element: <EnrolledClasses></EnrolledClasses>,
+      },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory></PaymentHistory>,
       },
     ],
   },
