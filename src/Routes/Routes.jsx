@@ -9,6 +9,8 @@ import DashBoard from "../Layout/DashBoard";
 import SelectedClasses from "../Pages/DashBoard/StudentDashBoard/SelectedClasses";
 import EnrolledClasses from "../Pages/DashBoard/StudentDashBoard/EnrolledClasses";
 import PaymentHistory from "../Pages/DashBoard/StudentDashBoard/PaymentHistory";
+import PrivateRoute from "./PrivateRoute";
+import Error from "../Pages/Errorpage/Error";
 
 export const router = createBrowserRouter([
   {
@@ -35,11 +37,15 @@ export const router = createBrowserRouter([
         path: "signup",
         element: <SignUp></SignUp>,
       },
+      {
+        path: "*",
+        element: <Error></Error>,
+      },
     ],
   },
   {
     path: "dashboard",
-    element: <DashBoard></DashBoard>,
+    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children: [
       {
         path: "selectedClasses",
