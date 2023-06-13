@@ -7,6 +7,9 @@ const ManageUsers = () => {
             <Helmet>
                 <title>fluentrix | Manage Users</title>
             </Helmet>
+            <h2>
+                manage Users
+            </h2>
             
         </div>
     );

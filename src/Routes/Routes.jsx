@@ -9,6 +9,8 @@ import DashBoard from "../Layout/DashBoard";
 import SelectedClasses from "../Pages/DashBoard/StudentDashBoard/SelectedClasses";
 import EnrolledClasses from "../Pages/DashBoard/StudentDashBoard/EnrolledClasses";
 import PaymentHistory from "../Pages/DashBoard/StudentDashBoard/PaymentHistory";
+import ManageClasses from "../Pages/DashBoard/AdminDashBoard/ManageClasses";
+import ManageUsers from "../Pages/DashBoard/AdminDashBoard/ManageUsers";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../Pages/Errorpage/Error";
 
@@ -59,6 +61,16 @@ export const router = createBrowserRouter([
         path: "paymentHistory",
         element: <PaymentHistory></PaymentHistory>,
       },
+      {
+        path: "manageClasses",
+        element: <ManageClasses></ManageClasses>,
+      },
+      {
+        path: "manageUsers",
+        element: <ManageUsers></ManageUsers>,
+      },
+      
+
     ],
   },
 ]);
