@@ -30,7 +30,44 @@ const ManageUsers = () => {
         })
     }
 
-    const handleDelete = ()=> {
+    const handleMakeInstructor = user =>{
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an Instructor Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+
+    const handleDelete = (user)=> {
+        fetch(`http://localhost:5000/users/${user._id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is deleted`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
 
     }
 
@@ -62,8 +99,9 @@ const ManageUsers = () => {
                                 <td>{user.email}</td>
                                 <td>{ user.role === 'admin' ? 'admin' :
                                     <div className="inline">
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield>Make Admin</button>
-                                    <button  className="btn btn-ghost bg-orange-600  text-white">Make Instructor</button> 
+                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600  text-white"><FaUserShield></FaUserShield>Make Admin
+                                        </button>
+                                    <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-orange-600  text-white">Make Instructor</button> 
                                     </div>
                                     }</td>
                                 <td><button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
