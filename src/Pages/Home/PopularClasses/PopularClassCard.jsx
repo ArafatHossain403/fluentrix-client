@@ -12,42 +12,43 @@ const PopularClassCard = ({ classes }) => {
 
   const handleCoursesCart = (classes) => {
     console.log(classes);
-    if (user && user.email) {
+    if(user && user.email){
       const enrollClass = {classId: _id, name, instructor, image, price , availableSeats,email:user.email}
-      fetch("https://fluentrix-server.vercel.app/coursesCart", {
-        method: 'POST',
-        headers:{
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(enrollClass)
+      fetch('http://localhost:5000/coursesCart', {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(enrollClass)
       })
-        .then(res => res.json())
-        .then(data => {
-          if (data.insertedId) {
-            Swal.fire({
-              
-              text: "Course Added Successfully",
-              
-        
-          
-            });
-          } 
-          else {
-            Swal.fire({
-              title: "Login to Enroll the Course",
-              icon: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "#3085d6",
-              cancelButtonColor: "#d33",
-              confirmButtonText: "Login",
-            }).then((result) => {
-              if (result.isConfirmed) {
-                navigate('/login',{state:{from: location}});
-              }
-            });
+      .then(res => res.json())
+      .then(data => {
+          if(data.insertedId){
+               
+              Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Course Added Successfully',
+                  showConfirmButton: false,
+                  timer: 2000
+                })
           }
-        });
-    }
+      })
+  }
+  else{
+      Swal.fire({
+          title: 'Login to Enroll the Course',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Login now!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate('/login', {state: {from: location}})
+          }
+        })
+  }
   };
 
   return (
