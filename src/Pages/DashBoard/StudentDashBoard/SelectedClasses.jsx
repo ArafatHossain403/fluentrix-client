@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import Swal from "sweetalert2";
 import useCourseCart from "../../../hooks/useCourseCart";
+import { Link } from "react-router-dom";
 
 const SelectedClasses = () => {
 
@@ -59,7 +60,7 @@ const SelectedClasses = () => {
           <span className="">Total Price:</span> $
           {parseFloat(totalPrice).toFixed(2)}
         </h2>
-        <button className="btn btn-warning">Pay</button>
+        <Link to='/dashboard/payment'><button className="btn btn-warning">Pay</button></Link>
       </div>
       <div className="divider"></div>
 

@@ -8,11 +8,16 @@ import SignUp from "../Pages/SignUp/SignUp";
 import DashBoard from "../Layout/DashBoard";
 import SelectedClasses from "../Pages/DashBoard/StudentDashBoard/SelectedClasses";
 import EnrolledClasses from "../Pages/DashBoard/StudentDashBoard/EnrolledClasses";
+import Payment from "../Pages/DashBoard/StudentDashBoard/Payment";
 import PaymentHistory from "../Pages/DashBoard/StudentDashBoard/PaymentHistory";
 import ManageClasses from "../Pages/DashBoard/AdminDashBoard/ManageClasses";
 import ManageUsers from "../Pages/DashBoard/AdminDashBoard/ManageUsers";
+import AddClass from "../Pages/DashBoard/InstructorDashBoard/AddClass";
+import MyClass from "../Pages/DashBoard/InstructorDashBoard/MyClass";
+
 import PrivateRoute from "./PrivateRoute";
 import Error from "../Pages/Errorpage/Error";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -63,12 +68,25 @@ export const router = createBrowserRouter([
       },
       {
         path: "manageClasses",
-        element: <ManageClasses></ManageClasses>,
+        element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>,
       },
       {
         path: "manageUsers",
-        element: <ManageUsers></ManageUsers>,
+        element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>,
       },
+      {
+        path: "addClass",
+        element: <AddClass></AddClass>,
+      },
+      {
+        path: "myClass",
+        element: <MyClass></MyClass>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
+      
       
 
     ],

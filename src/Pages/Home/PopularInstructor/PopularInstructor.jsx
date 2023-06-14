@@ -5,7 +5,7 @@ import PopularInstructorCard from "./PopularInstructorCard";
 const PopularInstructor = () => {
   const [instructor, setInstructor] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/instructors")
+    fetch("https://fluentrix-server.vercel.app/instructors")
       .then((res) => res.json())
       .then((data) => {
         const popularInstructor = data.slice(0, 6);

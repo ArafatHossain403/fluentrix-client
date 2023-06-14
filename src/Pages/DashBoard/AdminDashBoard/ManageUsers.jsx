@@ -14,7 +14,7 @@ const ManageUsers = () => {
     })
 
     const handleMakeAdmin = user =>{
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://fluentrix-server.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -27,14 +27,14 @@ const ManageUsers = () => {
                     icon: 'success',
                     title: `${user.name} is an Admin Now!`,
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 2000
                   })
             }
         })
     }
 
     const handleMakeInstructor = user =>{
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://fluentrix-server.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -47,7 +47,7 @@ const ManageUsers = () => {
                     icon: 'success',
                     title: `${user.name} is an Instructor Now!`,
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 2000
                   })
             }
         })
@@ -67,7 +67,7 @@ const ManageUsers = () => {
                     icon: 'success',
                     title: `${user.name} is deleted`,
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 2000
                   })
             }
         })
@@ -79,7 +79,7 @@ const ManageUsers = () => {
             <Helmet>
                 <title>fluentrix | Manage Users</title>
             </Helmet>
-            <h2>
+            <h2 className="text-center font-bold text-xl">
                 Users: {users.length}
             </h2>
             <div className="overflow-x-auto">

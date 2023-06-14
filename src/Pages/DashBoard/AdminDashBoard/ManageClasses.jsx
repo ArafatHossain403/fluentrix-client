@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const ManageClasses = () => {
   const { data: classes = [], refetch } = useQuery(["classes"], async () => {
-    const res = await fetch("http://localhost:5000/classes");
+    const res = await fetch("https://fluentrix-server.vercel.app/classes");
     return res.json();
   });
 
@@ -13,7 +13,7 @@ const ManageClasses = () => {
         <title>fluentrix | Manage Classes</title>
       </Helmet>
 
-      <h2>All Classes {classes.length}</h2>
+      <h2 className="text-center font-bold text-xl">All Classes {classes.length}</h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           {/* head */}

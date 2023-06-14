@@ -3,11 +3,16 @@ import { SiGoogleclassroom } from "react-icons/si";
 import { GrCheckboxSelected } from "react-icons/gr";
 import { MdPayment } from "react-icons/md";
 import { FaHome, FaUsers } from "react-icons/fa";
+import { FiUsers} from "react-icons/fi";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 
 const DashBoard = () => {
   const [isAdmin]= useAdmin();
+  const [isInstructor]= useInstructor();
+
+  
 
   return (
     <div>
@@ -54,45 +59,71 @@ const DashBoard = () => {
 
 
                 </>:
-                <>
-                <li>
-              <Link to="/">
-                <FaHome></FaHome> Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/selectedClasses">
-                <GrCheckboxSelected></GrCheckboxSelected> Selected Class
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/enrolledClasses">
-                <SiGoogleclassroom></SiGoogleclassroom> Enrolled Class
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/paymentHistory">
-                <MdPayment></MdPayment> Payment History
-              </Link>
-            </li>
-
-                </>
+                 <>
+                 {
+                   isInstructor ?
+                
+                   <>
+                   <li>
+                 <Link to="/">
+                   <FaHome></FaHome> Home
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/dashboard/addClass">
+                   <GrCheckboxSelected></GrCheckboxSelected> Add a Class
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/dashboard/myClass">
+                   <SiGoogleclassroom></SiGoogleclassroom> My classes
+                 </Link>
+               </li>
+   
+                   </>
+                   :
+   
+                   <>
+                   <li>
+                 <Link to="/">
+                   <FaHome></FaHome> Home
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/dashboard/selectedClasses">
+                   <GrCheckboxSelected></GrCheckboxSelected> Selected Class
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/dashboard/enrolledClasses">
+                   <SiGoogleclassroom></SiGoogleclassroom> Enrolled Class
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/dashboard/paymentHistory">
+                   <MdPayment></MdPayment> Payment History
+                 </Link>
+               </li>
+   
+                   </> 
+                 }
+                 </>           
             }
             
             <div className="divider"></div>
             <li>
               <Link to="/">
-                <MdPayment></MdPayment>Home
+                <FaHome></FaHome>Home
               </Link>
             </li>
             <li>
               <Link to="/classes">
-                <MdPayment></MdPayment>Classes
+              <SiGoogleclassroom></SiGoogleclassroom>Classes
               </Link>
             </li>
             <li>
               <Link to="/instructors">
-                <MdPayment></MdPayment>Instructors
+                <FiUsers></FiUsers>Instructors
               </Link>
             </li>
           </ul>

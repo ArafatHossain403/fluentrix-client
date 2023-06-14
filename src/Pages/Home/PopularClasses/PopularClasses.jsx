@@ -5,7 +5,7 @@ import PopularClassCard from "./PopularClassCard";
 const PopularClasses = () => {
     const [classes, setClass]= useState([]);
     useEffect( ()=>{
-        fetch('http://localhost:5000/classes')
+        fetch('https://fluentrix-server.vercel.app/classes')
         .then(res => res.json())
         .then(data => {
             const popularClasses= data.slice(0,6);

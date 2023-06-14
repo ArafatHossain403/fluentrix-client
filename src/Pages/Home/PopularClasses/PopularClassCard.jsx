@@ -14,7 +14,7 @@ const PopularClassCard = ({ classes }) => {
     console.log(classes);
     if (user && user.email) {
       const enrollClass = {classId: _id, name, instructor, image, price , availableSeats,email:user.email}
-      fetch("http://localhost:5000/coursesCart", {
+      fetch("https://fluentrix-server.vercel.app/coursesCart", {
         method: 'POST',
         headers:{
           'content-type': 'application/json'
