@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import { SiGoogleclassroom } from "react-icons/si";
 import { GrCheckboxSelected } from "react-icons/gr";
 import { MdPayment } from "react-icons/md";
-import { FaHome, FaUsers } from "react-icons/fa";
+import { FaAddressBook, FaHome, FaUsers } from "react-icons/fa";
 import { FiUsers} from "react-icons/fi";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
@@ -56,6 +56,11 @@ const DashBoard = () => {
                <FaUsers></FaUsers> Manage Users
               </Link>
             </li>
+            <li>
+                 <Link to="/dashboard/addClass">
+                   <FaAddressBook></FaAddressBook> Add a Class
+                 </Link>
+               </li>
 
 
                 </>:
