@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt, FaUserShield } from "react-icons/fa";
 
 const ManageClasses = () => {
   const { data: classes = [], refetch } = useQuery(["classes"], async () => {

@@ -1,3 +1,4 @@
+import About from "../About/About";
 import Banner from "../Banner/Banner";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructor from "../PopularInstructor/PopularInstructor";
@@ -10,6 +11,7 @@ const Home = () => {
         <title>fluentrix | Home </title>
       </Helmet>
       <Banner></Banner>
+      <About></About>
       <PopularClasses></PopularClasses>
       <PopularInstructor></PopularInstructor>
     </div>

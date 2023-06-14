@@ -4,6 +4,7 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const useCourseCart = () => {
     const { user } = useContext(AuthContext);
+    const token = localStorage.getItem('access-token');
 
     const { refetch, data: coursesCart = [] } = useQuery({
         queryKey: ['coursesCart', user?.email],
