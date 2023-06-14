@@ -3,10 +3,11 @@ import { SiGoogleclassroom } from "react-icons/si";
 import { GrCheckboxSelected } from "react-icons/gr";
 import { MdPayment } from "react-icons/md";
 import { FaHome, FaUsers } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 
 
 const DashBoard = () => {
-  const isAdmin = true;
+  const [isAdmin]= useAdmin();
 
   return (
     <div>
